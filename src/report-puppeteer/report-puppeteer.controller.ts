@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Res } from '@nestjs/common';
+import { Body, Controller, Get, Post, Res } from '@nestjs/common';
 import { ReportPuppeteerService } from './report-puppeteer.service';
 import { Response } from 'express';
 import { GeneratePdfDto } from './dto/generatePdf.dto';
@@ -7,7 +7,7 @@ import { GeneratePdfDto } from './dto/generatePdf.dto';
 export class ReportPuppeteerController {
   constructor(private readonly reportPuppeteerService: ReportPuppeteerService) {}
 
-  @Get('generate-pdf')
+  @Post('generate-pdf')
   async generate(@Body() generatePdfDto: GeneratePdfDto, @Res() res: Response) {
 
     const pdfBuffer = await this.reportPuppeteerService.generatePdf(generatePdfDto);
