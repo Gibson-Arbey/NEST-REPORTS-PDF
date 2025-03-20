@@ -1,23 +1,30 @@
 import { Injectable } from '@nestjs/common';
 import * as puppeteer from 'puppeteer';
+import { GeneratePdfDto } from './dto/generatePdf.dto';
 
 @Injectable()
 export class ReportPuppeteerService {
-  async generatePdf(htmlContent: string): Promise<Buffer> {
+  async generatePdf(generatePdfDto: GeneratePdfDto): Promise<Buffer> {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
-    // Cargar el contenido HTML
-    await page.setContent(htmlContent, { waitUntil: 'load' });
+    // Cargar el contenido HTML recibido en el DTO
+    await page.setContent(generatePdfDto.htmlContent, { waitUntil: 'load' });
 
-    // Generar el PDF
+    // Generar el PDF con las opciones recibidas en el DTO
     const pdfBuffer = await page.pdf({
-      format: 'A4',
-      printBackground: true,
+      format: generatePdfDto.format,
+      width: generatePdfDto.width,
+      height: generatePdfDto.height,
+      scale: generatePdfDto.scale,
+      printBackground: generatePdfDto.printBackground,
+      margin: generatePdfDto.margin,
+      landscape: generatePdfDto.landscape,
     });
 
     await browser.close();
-    // Convertir Uint8Array a Buffer
+
+    // Convertir Uint8Array a Buffer y retornarlo
     return Buffer.from(pdfBuffer);
   }
 
