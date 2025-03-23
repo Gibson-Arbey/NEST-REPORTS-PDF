@@ -5,21 +5,26 @@ import { GeneratePdfDto } from './dto/generatePdf.dto';
 @Injectable()
 export class ReportPuppeteerService {
   async generatePdf(generatePdfDto: GeneratePdfDto): Promise<Buffer> {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'], });
     const page = await browser.newPage();
 
-    // Cargar el contenido HTML recibido en el DTO
-    await page.setContent(generatePdfDto.htmlContent, { waitUntil: 'load' });
+    const { htmlContent, header, footer, format, printBackground, margin, landscape, scale, width, height } =
+      generatePdfDto;
+
+    await page.setContent(htmlContent, { waitUntil: 'load' });
 
     // Generar el PDF con las opciones recibidas en el DTO
     const pdfBuffer = await page.pdf({
-      format: generatePdfDto.format,
-      width: generatePdfDto.width,
-      height: generatePdfDto.height,
-      scale: generatePdfDto.scale,
-      printBackground: generatePdfDto.printBackground,
-      margin: generatePdfDto.margin,
-      landscape: generatePdfDto.landscape,
+      format,
+      width: width,
+      height: height,
+      scale,
+      printBackground,
+      margin,
+      landscape,
+      displayHeaderFooter: true,
+      headerTemplate: header ?? '',
+      footerTemplate: footer ?? '',
     });
 
     await browser.close();

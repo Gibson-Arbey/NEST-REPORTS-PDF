@@ -82,4 +82,12 @@ export class GeneratePdfDto {
 
   @IsString()
   htmlContent: string;
+
+  @IsString()
+  @IsOptional()
+  header?: string;
+
+  @IsString()
+  @IsOptional()
+  footer?: string;
 }
