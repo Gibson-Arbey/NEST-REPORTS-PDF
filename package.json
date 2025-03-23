@@ -20,13 +20,17 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@kurkle/color": "^0.3.4",
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^11.0.1",
     "@prisma/client": "^6.5.0",
+    "axios": "^1.8.4",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
+    "html-to-pdfmake": "^2.5.23",
+    "jsdom": "^26.0.0",
     "pdfmake": "^0.2.18",
     "prisma": "^6.5.0",
     "puppeteer": "^24.4.0",
