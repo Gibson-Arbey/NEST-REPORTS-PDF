@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { BasicReportsModule } from './basic-reports/basic-reports.module';
-import { PrinterModule } from './printer/printer.module';
+import { BasicReportsModule } from './report-pdfmake/basic-reports/basic-reports.module';
+import { PrinterModule } from './report-pdfmake/printer/printer.module';
 import { ReportPuppeteerModule } from './report-puppeteer/report-puppeteer.module';
-import { StoreReportsModule } from './store-reports/store-reports.module';
-import { ExtraReportsModule } from './extra-reports/extra-reports.module';
+import { StoreReportsModule } from './report-pdfmake/store-reports/store-reports.module';
+import { ExtraReportsModule } from './report-pdfmake/extra-reports/extra-reports.module';
 
 @Module({
   imports: [BasicReportsModule, PrinterModule, ReportPuppeteerModule, StoreReportsModule, ExtraReportsModule],

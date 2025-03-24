@@ -1,9 +1,9 @@
 import type { TDocumentDefinitions } from 'pdfmake/interfaces';
-import { getDonutChart } from './charts/donut.chart';
-import { headerSection } from './sections/header.section';
-import { getLineChart } from './charts/line.chart';
-import { getBarsChart } from './charts/bars.chart';
-import { footerSection } from './sections/footer.section';
+import { getDonutChart } from 'src/report-pdfmake/reports/charts/donut.chart';
+import { headerSection } from 'src/report-pdfmake/reports/sections/header.section';
+import { getLineChart } from 'src/report-pdfmake/reports/charts/line.chart';
+import { getBarsChart } from 'src/report-pdfmake/reports/charts/bars.chart';
+import { footerSection } from 'src/report-pdfmake/reports/sections/footer.section';
 
 interface TopCountry {
   country: string;

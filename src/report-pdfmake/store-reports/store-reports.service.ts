@@ -1,9 +1,9 @@
 import { Injectable, NotFoundException, OnModuleInit } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
-import { PrinterService } from 'src/printer/printer.service';
-import { getBasicChartSvgReport } from 'src/reports/basic-chart-svg.report';
-import { orderByIdReport } from 'src/reports/order-by-id.report';
-import { getStatisticsReport } from 'src/reports/statistics.report';
+import { PrinterService } from 'src/report-pdfmake/printer/printer.service';
+import { getBasicChartSvgReport } from 'src/report-pdfmake/reports/basic-chart-svg.report';
+import { orderByIdReport } from 'src/report-pdfmake/reports/order-by-id.report';
+import { getStatisticsReport } from 'src/report-pdfmake/reports/statistics.report';
 
 @Injectable()
 export class StoreReportsService extends PrismaClient implements OnModuleInit {

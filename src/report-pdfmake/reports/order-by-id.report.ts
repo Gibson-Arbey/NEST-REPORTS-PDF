@@ -3,9 +3,9 @@ import type {
     StyleDictionary,
     TDocumentDefinitions,
   } from 'pdfmake/interfaces';
-  import { DateFormatter } from 'src/helpers/date-formatter';
+  import { DateFormatter } from 'src/report-pdfmake/helpers/date-formatter';
   import { footerSection } from './sections/footer.section';
-import { CurrencyFormatter } from 'src/helpers/currency-formatter';
+import { CurrencyFormatter } from 'src/report-pdfmake/helpers/currency-formatter';
   
   const logo: Content = {
     image: 'assets/images/logo.png',

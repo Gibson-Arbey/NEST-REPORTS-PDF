@@ -1,4 +1,4 @@
-import * as Utils from 'src/helpers/chart-utils';
+import * as Utils from 'src/report-pdfmake/helpers/chart-utils';
 
 export const getBarsChart = async (): Promise<string> => {
   const DATA_COUNT = 7;

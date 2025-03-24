@@ -1,13 +1,13 @@
 import fs from 'fs';
 
 import { Injectable } from '@nestjs/common';
-import { PrinterService } from 'src/printer/printer.service';
+import { PrinterService } from 'src/report-pdfmake/printer/printer.service';
 
-import { getHtmlContent } from 'src/helpers/html-to-pdfmake';
+import { getHtmlContent } from 'src/report-pdfmake/helpers/html-to-pdfmake';
 import { TDocumentDefinitions } from 'pdfmake/interfaces';
-import { headerSection } from 'src/reports/sections/header.section';
-import { footerSection } from 'src/reports/sections/footer.section';
-import { getCommunityReport } from 'src/reports/community.report';
+import { headerSection } from 'src/report-pdfmake/reports/sections/header.section';
+import { footerSection } from 'src/report-pdfmake/reports/sections/footer.section';
+import { getCommunityReport } from 'src/report-pdfmake/reports/community.report';
 
 @Injectable()
 export class ExtraReportsService {

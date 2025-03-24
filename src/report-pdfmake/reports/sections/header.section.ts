@@ -1,5 +1,5 @@
 import { Content } from 'pdfmake/interfaces';
-import { DateFormatter } from 'src/helpers/date-formatter';
+import { DateFormatter } from 'src/report-pdfmake/helpers/date-formatter';
 
 const logo: Content = {
   image: 'assets/images/logo.png',

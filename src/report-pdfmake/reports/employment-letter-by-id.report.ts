@@ -1,6 +1,6 @@
 import type { StyleDictionary, TDocumentDefinitions } from 'pdfmake/interfaces';
+import { DateFormatter } from 'src/report-pdfmake/helpers/date-formatter';
 import { headerSection } from './sections/header.section';
-import { DateFormatter } from 'src/helpers/date-formatter';
 
 interface ReportValues {
   employerName: string;

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { StoreReportsService } from './store-reports.service';
 import { StoreReportsController } from './store-reports.controller';
-import { PrinterModule } from 'src/printer/printer.module';
+import { PrinterModule } from 'src/report-pdfmake/printer/printer.module';
 
 @Module({
   controllers: [StoreReportsController],

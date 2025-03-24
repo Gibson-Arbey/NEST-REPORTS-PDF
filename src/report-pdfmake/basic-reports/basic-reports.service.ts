@@ -1,10 +1,10 @@
 import { Injectable, Logger, NotFoundException, OnModuleInit } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
-import { PrinterService } from 'src/printer/printer.service';
-import { getHelloWorldReport } from 'src/reports';
-import { getCountryReport } from 'src/reports/countries.report';
-import { getEmploymentLetterByIdReport } from 'src/reports/employment-letter-by-id.report';
-import { getEmploymentLetterReport } from 'src/reports/employment-letter.report';
+import { PrinterService } from 'src/report-pdfmake/printer/printer.service';
+import { getHelloWorldReport } from 'src/report-pdfmake/reports';
+import { getEmploymentLetterReport } from '../reports/employment-letter.report';
+import { getEmploymentLetterByIdReport } from '../reports/employment-letter-by-id.report';
+import { getCountryReport } from '../reports/countries.report';
 
 @Injectable()
 export class BasicReportsService extends PrismaClient implements OnModuleInit {
